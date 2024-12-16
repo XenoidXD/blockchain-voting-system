@@ -30,14 +30,14 @@ try:
 except Exception as e:
     print(f"Error connecting to IPFS: {e}")
 
-# Global variable to store voting data
+# Store voting data
 election_data = {
     "candidates": {},
     "votes": {},
     "blockchain_records": []
 }
 
-# Helper function to hash data
+# Hash data
 def hash_data(data):
     return hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()
 
