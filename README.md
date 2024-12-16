@@ -109,5 +109,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Contributions are welcome! Feel free to fork the repository and submit a pull request with your enhancements.
 
 ## Contact
-For any inquiries, reach out via email at [your-email@example.com](mailto:incxenoid@gmail.com).
+For any inquiries, reach out via email at [incxenoid@gmail.com](mailto:incxenoid@gmail.com).
 
