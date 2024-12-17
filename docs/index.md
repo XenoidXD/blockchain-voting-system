@@ -165,4 +165,4 @@ The blockchain.py file provides a basic structure for incorporating blockchain l
 - Decentralized vote management.
 
 # License
-[Detail check on the file License](./License)
+[Detail check on the file License](../License)
