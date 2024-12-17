@@ -1,0 +1,41 @@
+# Berkas sementara dan cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store # Berkas metadata macOS
+
+# Lingkungan virtual
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+*.egg-info/
+
+# Berkas log
+*.log
+
+# Berkas konfigurasi lokal
+config/credentials.json  # Penting! Jangan commit kredensial!
+.env #Berkas environment lokal
+
+# Berkas database
+*.sqlite
+*.db
+
+# Berkas distribusi/build
+dist/
+build/
+*.whl
+
+# IDE dan editor teks
+.idea/           # IntelliJ IDEA
+.vscode/         # Visual Studio Code
+*.swp            # Vim swap files
+*~               # Editor backup files
+.ropeproject     # Rope project files (Python refactoring tool)
+
+# Berkas yang dihasilkan sistem operasi
+Thumbs.db
+ehthumbs.db
