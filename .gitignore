@@ -1,11 +1,11 @@
-# Berkas sementara dan cache
+# Temporary File and cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .DS_Store # Berkas metadata macOS
 
-# Lingkungan virtual
+# Virtual environment
 .venv/
 venv/
 env/
@@ -16,20 +16,20 @@ virtualenv/
 # Berkas log
 *.log
 
-# Berkas konfigurasi lokal
+# Local configuration file
 config/credentials.json  # Penting! Jangan commit kredensial!
 .env #Berkas environment lokal
 
-# Berkas database
+# Database File
 *.sqlite
 *.db
 
-# Berkas distribusi/build
+# Distribution/build file
 dist/
 build/
 *.whl
 
-# IDE dan editor teks
+# Text editor cache
 .idea/           # IntelliJ IDEA
 .vscode/         # Visual Studio Code
 *.swp            # Vim swap files
