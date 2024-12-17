@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.DS_Store # Berkas metadata macOS
+.DS_Store # Cache Mac Os
 
 # Virtual environment
 .venv/
@@ -13,12 +13,12 @@ ENV/
 virtualenv/
 *.egg-info/
 
-# Berkas log
+# Cache log
 *.log
 
 # Local configuration file
-config/credentials.json  # Penting! Jangan commit kredensial!
-.env #Berkas environment lokal
+config/credentials_template.json  # Important! dont commit
+.env #Local environment file
 
 # Database File
 *.sqlite
@@ -36,6 +36,6 @@ build/
 *~               # Editor backup files
 .ropeproject     # Rope project files (Python refactoring tool)
 
-# Berkas yang dihasilkan sistem operasi
+# File from os system
 Thumbs.db
 ehthumbs.db
