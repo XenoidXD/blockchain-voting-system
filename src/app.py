@@ -1,10 +1,13 @@
 from flask import Flask, request, jsonify
 from blockchain import BitcoinTestnet
 from ipfs_utils import IPFSClient
+from config import settings
 import hashlib
 import os
 
 app = Flask(__name__)
+BITCOIN_CLIENT = BitcoinTestnet(settings.RPC_USER, settings.RPC_PASSWORD)
+IPFS_CLIENT = IPFSClient(settings.IPFS_HTTP_API)
 
 # Setup Blockchain Testnet and IPFS Client
 RPC_USER = os.getenv("RPC_USER", "your_rpc_user")
