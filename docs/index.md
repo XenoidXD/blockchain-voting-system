@@ -3,6 +3,7 @@
 This project implements a secure and transparent voting system using blockchain technology. It provides API endpoints for managing candidates, casting votes, and retrieving results. The project also includes unit tests and a basic structure for incorporating blockchain logic.
 
 ## Project Structure
+```bash
 ├── config/
 │   ├── __init_.py                  # Marks that the config directory is a Python package
 │   ├── credentials_template.json   # Store sensitive credential information
@@ -37,6 +38,7 @@ This project implements a secure and transparent voting system using blockchain 
 │   ├── test_api.py                 # Tests for API endpoints
 │   └── test_blockchain.py          # Tests for blockchain logic
 ├── README.md                       # Project description and setup instructions
+```
 
 ## Getting Started
 
@@ -163,4 +165,4 @@ The blockchain.py file provides a basic structure for incorporating blockchain l
 - Decentralized vote management.
 
 # License
-[Detail check on the file License (/License)]
+[Detail check on the file License] (/License)
