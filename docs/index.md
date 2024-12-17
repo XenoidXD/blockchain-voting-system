@@ -44,7 +44,7 @@ This project implements a secure and transparent voting system using blockchain 
 
 ### Prerequisites
 
-*   Python 3.9+
+*   Python 3.8+
 *   pip (Python package installer)
 *   Git (for version control)
 
