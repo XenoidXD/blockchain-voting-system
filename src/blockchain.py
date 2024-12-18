@@ -120,7 +120,6 @@ class BitcoinTestnet:
 
 
 if __name__ == "__main__":
-    # Create an instance of the BitcoinTestnet class
     btc = BitcoinTestnet()
 
     print("Generating a new address:")
