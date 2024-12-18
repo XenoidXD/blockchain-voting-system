@@ -15,6 +15,8 @@ except json.JSONDecodeError:
 RPC_USER = CREDENTIALS.get("bitcoin_rpc_user")
 RPC_PASSWORD = CREDENTIALS.get("bitcoin_rpc_password")
 IPFS_HTTP_API = CREDENTIALS.get("ipfs_http_api")
+BITCOIN_HOST = CREDENTIALS.get("bitcoin_host")
+BITCOIN_PORT = CREDENTIALS.get("bitcoin_port")
 
 # Additional Configuration (Remove if u don't need this)
 FLASK_PORT = int(os.getenv("FLASK_PORT", 5000))
