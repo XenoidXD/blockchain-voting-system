@@ -24,7 +24,7 @@ The **Blockchain Voting System** is a prototype application designed to ensure t
 ### Steps
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/blockchain-voting-system.git
+   git clone https://github.com/XenoidXD/blockchain-voting-system.git
    cd blockchain-voting-system
    ```
 
