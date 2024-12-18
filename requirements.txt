@@ -1,0 +1,4 @@
+Flask==2.2.5
+requests==2.31.0
+python-bitcoinrpc==1.0
+ipfshttpclient==0.8.0a2
