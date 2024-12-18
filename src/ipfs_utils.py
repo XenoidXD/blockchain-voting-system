@@ -3,13 +3,12 @@ from blockchain import BitcoinTestnet
 from ipfs_utils import IPFSClient
 import hashlib
 import os
+from config import settings
 
 app = Flask(__name__)
 
 # Setup Blockchain Testnet and IPFS Client
-RPC_USER = os.getenv("RPC_USER", "your_rpc_user")
-RPC_PASSWORD = os.getenv("RPC_PASSWORD", "your_rpc_password")
-BITCOIN_CLIENT = BitcoinTestnet(RPC_USER, RPC_PASSWORD)
+BITCOIN_CLIENT = BitcoinTestnet(settings.RPC_USER, settings.RPC_PASSWORD)
 IPFS_CLIENT = IPFSClient()
 
 # In-memory storage for candidates and votes (for prototyping)
