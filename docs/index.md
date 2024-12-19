@@ -53,7 +53,7 @@ This project implements a secure and transparent voting system using blockchain 
 1.  Clone the repository:
 
     ```bash
-    git clone [URL yang tidak valid dihapus]
+    git clone [https://www.github.com/XenoidXD/blockchain-voting-system.git]
     ```
 
 2.  Navigate to the project directory:
