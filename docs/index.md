@@ -59,7 +59,7 @@ This project implements a secure and transparent voting system using blockchain 
 2.  Navigate to the project directory:
 
     ```bash
-    cd blockchain-voting-app
+    cd blockchain-voting-system
     ```
 
 3.  Create and activate a virtual environment:
