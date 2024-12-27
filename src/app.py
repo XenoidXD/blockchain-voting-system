@@ -2,10 +2,17 @@ from flask import Flask, request, jsonify
 from blockchain import BitcoinTestnet
 from ipfs_utils import IPFSClient
 from config import settings
+from datetime import datetime
 import hashlib
 import os
 import json
-from datetime import datetime
+import logging
+from dotenv import load_dotenv
+
+# Setup environment and logging
+load_dotenv()
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -13,9 +20,22 @@ app = Flask(__name__)
 BITCOIN_CLIENT = BitcoinTestnet(settings.RPC_USER, settings.RPC_PASSWORD)
 IPFS_CLIENT = IPFSClient(settings.IPFS_HTTP_API)
 
-# In-memory storage for candidates and votes (for prototyping)
-candidates = {}
-votes = {}
+# In-memory storage for candidates and votes (with file persistence)
+CANDIDATES_FILE = "candidates.json"
+VOTES_FILE = "votes.json"
+
+def save_data(file_path, data):
+    with open(file_path, "w") as f:
+        json.dump(data, f)
+
+def load_data(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, "r") as f:
+            return json.load(f)
+    return {}
+
+candidates = load_data(CANDIDATES_FILE)
+votes = load_data(VOTES_FILE)
 
 @app.route("/register_candidate", methods=["POST"])
 def register_candidate():
@@ -30,6 +50,8 @@ def register_candidate():
         return jsonify({"status": "error", "error": "Candidate already exists"}), 400
 
     candidates[candidate_id] = name
+    save_data(CANDIDATES_FILE, candidates)
+    logger.info(f"Candidate registered: {candidate_id} - {name}")
     return jsonify({"status": "success", "data": {"candidate_id": candidate_id, "name": name}})
 
 @app.route("/vote", methods=["POST"])
@@ -47,22 +69,20 @@ def vote():
     if voter_id in votes:
         return jsonify({"status": "error", "error": "Voter has already voted"}), 400
 
-    # Record vote
     votes[voter_id] = candidate_id
+    save_data(VOTES_FILE, votes)
 
-    # Store vote metadata on IPFS and Blockchain
     metadata = {
-        "voter_id": voter_id,
+        "voter_id_hash": hashlib.sha256(voter_id.encode()).hexdigest(),
         "candidate_id": candidate_id,
         "timestamp": datetime.utcnow().isoformat()
     }
+
     try:
-        # Save metadata to IPFS
         metadata_json = json.dumps(metadata)
         ipfs_hash = IPFS_CLIENT.add_data(metadata_json)
-
-        # Store IPFS hash on Bitcoin Testnet
         result = BITCOIN_CLIENT.store_metadata(ipfs_hash)
+        logger.info(f"Vote recorded: Voter {voter_id} for Candidate {candidate_id}")
         return jsonify({
             "status": "success",
             "data": {
@@ -71,18 +91,26 @@ def vote():
             }
         })
     except Exception as e:
+        logger.error(f"Error recording vote: {str(e)}")
         return jsonify({"status": "error", "error": str(e)}), 500
 
 @app.route("/results", methods=["GET"])
 def results():
     tally = {}
+    total_votes = len(votes)
+    
     for candidate_id in votes.values():
         if candidate_id not in tally:
             tally[candidate_id] = 0
         tally[candidate_id] += 1
 
-    results = {candidates[cid]: count for cid, count in tally.items()}
-    return jsonify({"status": "success", "data": {"results": results}})
+    results = {
+        candidates[cid]: {
+            "vote_count": count,
+            "percentage": f"{(count / total_votes) * 100:.2f}%" if total_votes > 0 else "0%"
+        } for cid, count in tally.items()
+    }
+    return jsonify({"status": "success", "data": {"results": results, "total_votes": total_votes}})
 
 @app.route("/get_vote_metadata", methods=["GET"])
 def get_vote_metadata():
@@ -97,6 +125,7 @@ def get_vote_metadata():
             metadata_content = f.read()
         return jsonify({"status": "success", "data": {"metadata": metadata_content}})
     except Exception as e:
+        logger.error(f"Error fetching metadata: {str(e)}")
         return jsonify({"status": "error", "error": str(e)}), 500
 
 if __name__ == "__main__":
