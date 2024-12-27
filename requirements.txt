@@ -1,4 +1,6 @@
-Flask==2.2.5
+Flask==2.3.2
 requests==2.31.0
+python-dotenv==1.0.0
 python-bitcoinrpc==1.0
 ipfshttpclient==0.8.0a2
+jsonrpcclient==4.0.3
