@@ -18,7 +18,7 @@ def registered_candidate():
 def registered_voter():
     """Registers a test voter and returns the voter ID."""
     BASE_URL = "http://127.0.0.1:5000"
-    data = {"voter_id": "test_voter_1"} # Data voter bisa disesuaikan jika ada field lain
+    data = {"voter_id": "test_voter_1"} # Data voter can be adjust if there are another field
     headers = {"Content-Type": "application/json"}
     #Endpoint for registration voter need to be implement with the server
     #the endpoint assumption is /register_voter
