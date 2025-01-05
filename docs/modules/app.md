@@ -12,7 +12,7 @@ This module defines the Flask application that handles API requests for candidat
 
 Registers a new candidate.
 
-*   **Parameters:**
+ *   **Parameters:**
     *   `candidate_id` (str): The unique ID of the candidate.
     *   `name` (str): The candidate's name.
 *   **Returns:**
@@ -38,9 +38,7 @@ Registers a vote from a voter for a candidate.
 *   **Returns:**
     *   `tuple`: A tuple containing a JSON response and an HTTP status code.
 *   **Raises:**
-    *   `HTTPException` in case of errors.
-
-[Documentasikan fungsi-fungsi lainnya: `results()`, `get_vote_metadata()` dengan format yang sama.]
+    *   `HTTPException` in case of errors.
 
 ## Variables
 
