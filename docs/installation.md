@@ -14,7 +14,7 @@ This guide provides step-by-step instructions for setting up and running the Blo
 1.  Clone the repository:
 
     ```bash
-    git clone <repository_url>
+    git clone github.com/XenoidXD/blockchain-voting-system.git
     cd blockchain-voting-system
     ```
 
