@@ -3,6 +3,7 @@
 This module defines the `BitcoinTestnet` class for interacting with the Bitcoin Testnet.
 
 ## Classes
+None
 
 ### `BitcoinTestnet(rpc_user, rpc_password)`
 
@@ -43,6 +44,4 @@ Stores metadata on the Bitcoin Testnet using OP_RETURN transactions.
 *   **Returns:**
     *   `dict`: A dictionary containing the transaction ID (`txid`) and the metadata hash (`metadata_hash`).
 *   **Raises:**
-    *   `RuntimeError` if there's an issue storing the metadata.
-
-[Documentasikan method-method lainnya (jika ada) dengan format yang sama.]
+    *   `RuntimeError` if there's an issue storing the metadata.
