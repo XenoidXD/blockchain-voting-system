@@ -59,9 +59,7 @@ Retrieves JSON data from IPFS given its CID.
         print(f"Retrieved metadata: {metadata}")
     else:
         print("Failed to retrieve metadata from IPFS")
-    ```
-
-[Documentasikan method-method lain yang ada di `ipfs_utils.py`, misalnya fungsi untuk verifikasi data dari IPFS, dll.]
+    ```
 
 ## Error Handling
 
