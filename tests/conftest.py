@@ -20,8 +20,8 @@ def registered_voter():
     BASE_URL = "http://127.0.0.1:5000"
     data = {"voter_id": "test_voter_1"} # Data voter bisa disesuaikan jika ada field lain
     headers = {"Content-Type": "application/json"}
-    #Endpoint untuk registrasi voter perlu diimplementasi di backend
-    #asumsi endpointnya adalah /register_voter
+    #Endpoint for registration voter need to be implement with the server
+    #the endpoint assumption is /register_voter
     response = requests.post(f"{BASE_URL}/register_voter", headers=headers, data=json.dumps(data))
     assert response.status_code == 200
     return "test_voter_1"
