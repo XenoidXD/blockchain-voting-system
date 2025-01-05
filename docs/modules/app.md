@@ -4,7 +4,7 @@ This module defines the Flask application that handles API requests for candidat
 
 ## Classes
 
-### None (Currently, no classes are defined in app.py in the previous code example)
+None (Currently, no classes are defined in app.py in the previous code example)
 
 ## Functions
 
