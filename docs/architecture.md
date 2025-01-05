@@ -14,10 +14,6 @@ The system is designed using a modular architecture, integrating several key com
 
 ## Architecture Diagram
 
-[Insert diagram here: `![Architecture Diagram](images/architecture_diagram.png)` - Place the diagram in the `docs/images` folder.]
-
-(If you don't have a formal diagram you can describe it in text.) For example:
-
 The Flask application handles user requests. When a user casts a vote, the application creates a JSON metadata object containing the voter and candidate IDs. This metadata is then added to IPFS, returning an IPFS hash (CID). The application then creates a Bitcoin transaction containing this IPFS hash in an `OP_RETURN` output and broadcasts it to the Bitcoin Testnet. Results are calculated by retrieving the stored IPFS hashes from the Bitcoin blockchain and subsequently retrieving the corresponding metadata from IPFS.
 
 ## Data Flow (Example: Casting a Vote)
