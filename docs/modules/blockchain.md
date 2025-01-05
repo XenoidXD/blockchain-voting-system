@@ -3,7 +3,6 @@
 This module defines the `BitcoinTestnet` class for interacting with the Bitcoin Testnet.
 
 ## Classes
-None
 
 ### `BitcoinTestnet(rpc_user, rpc_password)`
 
