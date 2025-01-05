@@ -6,13 +6,13 @@ BASE_URL = "http://127.0.0.1:5000"
 
 def test_register_candidate():
     """Tests the /register_candidate endpoint."""
-    data = {"candidate_id": "test_cand_2", "name": "Test Candidate 2"} #test dengan data berbeda
+    data = {"candidate_id": "test_cand_2", "name": "Test Candidate 2"} #test with different data
     headers = {"Content-Type": "application/json"}
     response = requests.post(f"{BASE_URL}/register_candidate", headers=headers, data=json.dumps(data))
     assert response.status_code == 200
     assert response.json()["message"] == "Candidate registered successfully"
 
-def test_cast_vote(registered_candidate,registered_voter): # menggunakan fixture registered_candidate
+def test_cast_vote(registered_candidate,registered_voter): # use fixture registered_candidate
     """Tests the /vote endpoint."""
     candidate_id = registered_candidate
     voter_id = registered_voter
@@ -34,10 +34,10 @@ def test_get_vote_metadata():
     REPLACE "Qm..." with a valid IPFS hash for testing.
     Add more detailed assertions based on the expected metadata structure.
     """
-    ipfs_hash = "Qm..." # Ganti dengan hash IPFS yang valid!
+    ipfs_hash = "Qm..." # Replace with valid hash IPFS
     response = requests.get(f"{BASE_URL}/get_vote_metadata", params={"ipfs_hash": ipfs_hash})
     assert response.status_code == 200
-    #Contoh detail assertion
+    #detail example of assertion
     #if response.status_code == 200:
     #    metadata = response.json()
     #    assert "voter_id" in metadata
