@@ -37,7 +37,11 @@ This project implements a secure and transparent voting system using blockchain 
 │   ├── conftest.py                 # Fixtures for tests
 │   ├── test_api.py                 # Tests for API endpoints
 │   └── test_blockchain.py          # Tests for blockchain logic
+├── .gitignore                      # Files to ignore some files from the git push process
+├── LICENSE                         # Project license detail
 ├── README.md                       # Project description and setup instructions
+├── requirements.txt                # Requirements file for running auto installation
+
 ```
 
 ## Getting Started
