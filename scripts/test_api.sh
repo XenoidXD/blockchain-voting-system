@@ -1,3 +1,5 @@
+# Script to test the api 
+
 #!/bin/bash
 
 #Define Base URL

@@ -1,3 +1,5 @@
+# Code example to get voting result
+
 import requests
 import json
 

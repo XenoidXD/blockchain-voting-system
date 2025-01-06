@@ -1,6 +1,6 @@
 # config Module Documentation
 
-This module handles application configuration, loading credentials, and setting constants.
+This module handles application configuration, loading credentials, and setting constants in BVS (blockchain-voting-system)
 
 ## Modules/Files
 

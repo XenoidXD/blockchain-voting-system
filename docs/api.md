@@ -1,6 +1,6 @@
 # API Documentation
 
-This document describes the API endpoints available in the Blockchain-Based Voting System.
+This document describes the API endpoints available in the blockchain-voting-system.
 
 ## Endpoints
 

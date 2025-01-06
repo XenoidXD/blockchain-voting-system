@@ -41,7 +41,6 @@ This project implements a secure and transparent voting system using blockchain 
 ├── LICENSE                         # Project license detail
 ├── README.md                       # Project description and setup instructions
 ├── requirements.txt                # Requirements file for running auto installation
-
 ```
 
 ## Getting Started

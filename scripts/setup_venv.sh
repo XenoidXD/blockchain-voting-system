@@ -1,3 +1,5 @@
+# Script to setup virtual environment
+
 #!/bin/bash
 
 # Create the virtual environment

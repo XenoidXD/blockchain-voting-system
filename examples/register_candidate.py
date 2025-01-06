@@ -1,3 +1,5 @@
+# Code example to register candidate
+
 import requests
 import json
 

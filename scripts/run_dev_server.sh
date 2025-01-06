@@ -1,3 +1,5 @@
+# Script to run local server
+
 #!/bin/bash
 
 # Activate the virtual environment

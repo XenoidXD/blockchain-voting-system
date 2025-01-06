@@ -1,5 +1,4 @@
-# Test for blockchain logic
-# Example enhanced tests, adapt as needed based on your blockchain implementation.
+# Test for blockchain logic.
 import pytest
 from blockchain import Blockchain, Block            # Import your blockchain and block classes
 
@@ -23,6 +22,6 @@ def test_is_chain_valid():
    bc.add_block("test data")
    assert bc.is_chain_valid() == True
 
-   #Manipulate a block to make chain invalid
+   # Manipulate a block to make chain invalid
    bc.chain[1].data = "tampered data"
    assert bc.is_chain_valid() == False

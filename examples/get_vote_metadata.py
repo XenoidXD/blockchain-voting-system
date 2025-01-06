@@ -1,3 +1,5 @@
+# Code example to get vote metadata
+
 import requests
 import json
 

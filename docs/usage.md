@@ -1,6 +1,6 @@
 # Usage Guide
 
-This guide explains how to use the Blockchain-Based Voting System.
+This guide explains how to use the BVS (blockchain-voting-system).
 
 ## Overview
 
